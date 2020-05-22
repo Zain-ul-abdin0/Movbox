@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LoginAndSignUp extends StatelessWidget {
-  LoginAndSignUp(this.name);
+class SignUp extends StatelessWidget {
+  SignUp(this.name);
 
   String name;
 
@@ -12,9 +12,7 @@ class LoginAndSignUp extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          SizedBox(
-            height: 20,
-          ),
+        
           Text(
             'Moovbox',
             style: TextStyle(
@@ -28,21 +26,27 @@ class LoginAndSignUp extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          SizedBox(
-            height: 50,
-          ),
-          FieldName('Email Address', false),
-          TextInput('Enter your Email'),
-          FieldName('Password', true),
+        
+          
+          FieldName('Full Name'),
+          TextInput('Enter Full Name'),
+          FieldName('Email Address'),
+          TextInput('Enter your email'),
+
+
+          FieldName('Password'),
           TextInput('Enter minimum 8 digit password'),
+          FieldName('Confirm Password'),
+          TextInput('Repeat your password'),
+
           LoginBtn(),
           Text(
-            'Or Log in from Facebook',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            'By clicking Create Account you agree to the following Terms and Conditions without reservation',
+                        textAlign: TextAlign.center,
+
+            style: TextStyle( fontSize: 13, color: Color(0xffB2B2B2)),
           ),
-          SizedBox(
-            height: 20,
-          )
+        
         ],
       ),
     );
@@ -56,6 +60,7 @@ class TextInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width / 1.1,
+      height: 42,
       child: TextField(
           style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
@@ -71,10 +76,9 @@ class TextInput extends StatelessWidget {
 }
 
 class FieldName extends StatelessWidget {
-  FieldName(this.name, this.check);
+  FieldName(this.name,);
   String name;
-  bool check;
-  @override
+   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width / 1.1,
@@ -90,17 +94,7 @@ class FieldName extends StatelessWidget {
                 color: Color(0xffB2B2B2),
               ),
             ),
-            check == true?
-              
-                Text(
-                  'Forgot Password?',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xffFF0058),
-                  ),
-                )
-              :Text('xsom')
+           
               
           ],
         ),
@@ -114,7 +108,7 @@ class LoginBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width / 1.1,
-      height: 50,
+      height: 42,
       child: FlatButton(
         shape: new RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(10.0),
@@ -129,7 +123,7 @@ class LoginBtn extends StatelessWidget {
           /*...*/
         },
         child: Text(
-          "Login",
+          "Create Account",
           style: TextStyle(fontSize: 20.0),
         ),
       ),
