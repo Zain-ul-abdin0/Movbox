@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:moovbox/components/LoginAndSignUp/Login.dart';
-import 'package:moovbox/components/LoginAndSignUp/SignUp.dart';
+import 'package:moovbox/screen/Login.dart';
+import 'package:moovbox/screen/SignUp.dart';
 
-class LoginAndSignUp extends StatelessWidget {
-  @override
+class HeaderTabBar extends StatelessWidget {
+   @override
   Widget build(BuildContext context) {
     return Container(
       child: MaterialApp(
@@ -46,7 +46,7 @@ class LoginAndSignUp extends StatelessWidget {
               children: [
                Login('Login'),
               
-               SignUp( 'SignUp'),
+               SignUp('SignUp'),
 
               ],
             ),

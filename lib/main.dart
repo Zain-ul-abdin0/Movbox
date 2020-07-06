@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart'; 
-import 'package:moovbox/screens/LoginandSignUpNavigation.dart';
-
+import 'package:flutter/material.dart';
+import 'package:moovbox/widgets/AuthScreens/HeaderTabBar.dart'; 
+ 
 void main() {
   runApp(MyApp());
 }
@@ -8,6 +8,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LoginAndSignUp();
-  }
+  return HeaderTabBar();
+}
 }
