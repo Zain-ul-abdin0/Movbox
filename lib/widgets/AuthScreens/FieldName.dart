@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-class FieldName extends StatelessWidget {
+import 'package:moovbox/screen/ForgetPassword.dart';
+ class FieldName extends StatelessWidget {
   FieldName(this.name, this.check);
   String name;
   bool check;
@@ -21,12 +22,20 @@ class FieldName extends StatelessWidget {
             ),
             check == true?
               
-                Text(
-                  'Forgot Password?',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xffFF0058),
+                GestureDetector(
+                  onTap: ()=>{
+                     Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) =>  ForgetPassword('Forgot Password') ),
+  )
+                  },
+                                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xffFF0058),
+                    ),
                   ),
                 )
               :Text('xsom')
